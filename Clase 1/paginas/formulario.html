@@ -16,11 +16,16 @@
                 id="":id para js
                 cols="":
                 rows="":
-            select: lista de palabras
-                name="":
+            select: lista de palabras, dentro del name envia el id de la opcion
+                name="": nombre de identificador. si quiero seleccionar mas de un valor, debo poner nombre[] y devuelve array
                 id="":
+                multiple: propiedad para seleccionar mas de una opcion
+                size="": cantidad de elementos a mostrar
+                optgroup: puedo poner dentro options y crear grupos
+                    label="": nombre que aparece en el grupo
                 option: opciones
                     value="": numero de opcion
+                    selected se utiliza como propiedad para elegirlo por default
 -->
 
 
@@ -35,10 +40,16 @@
     Nombre:<input type="text" name="nombre" size="20" value="Nombre"><br>
     Clave: <input type="password" name="pass" size="20"><br>
     Localidad:
-    <select name="lista" id="">
-        <option value="1">Avellaneda</option>
-        <option value="2">Lanus</option>
+    <select name="lista" id="" >
+        <optgroup label="grupo1" >
+            <option value="1">Temperley</option>
+            <option value="2" >Banfield</option>
 
+        </optgroup>
+        <optgroup label="grupo2">
+        <option value="1">Avellaneda</option>
+        <option value="Lanus" selected >Lanus</option>
+</optgroup>
     </select>
     <br>
     Comentarios:<br>
