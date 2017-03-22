@@ -8,6 +8,8 @@
                     password: contraseña
                     submit: boton de enviar
                     reset: borra datos de formulario
+                    checkbox: seleccionar o no    checked si quiero que aparesca chequeado
+                    radio: radiobutton checked si quiero que aparesca chequeado MISMO NAME PARA QUE SEA EXCLUYENTE
                 name="": nombre de la variable que va en el post o get
                 size="": cantidad de caracteres visibles
                 value=" ": aparece una frase pre cargada
@@ -26,6 +28,10 @@
                 option: opciones
                     value="": numero de opcion
                     selected se utiliza como propiedad para elegirlo por default
+            fieldset: grupo de controles con un marco y un titulo
+                legend: crea leyenda del grupo
+            tabindex: propiedad para cualquier etiqueta, enteros, que dan orden a que el cursor se desplace con tab
+            
 -->
 
 
@@ -37,8 +43,14 @@
 </head>
 <body>
 <form action="#" method="POST">
-    Nombre:<input type="text" name="nombre" size="20" value="Nombre"><br>
+    <fieldset >
+        <legend> Datos </legend>
+
+Nombre:<input type="text" name="nombre" size="20" value="Nombre"><br>
     Clave: <input type="password" name="pass" size="20"><br>
+       
+    
+    </fieldset>
     Localidad:
     <select name="lista" id="" >
         <optgroup label="grupo1" >
@@ -56,6 +68,9 @@
     <textarea name="comentario" id="" cols="30" rows="10">Ingrese comentario</textarea>
 
 <br>
+<input type="checkbox" value="checkbox">check<br>
+<input type="radio" name="sexo" value="masculino">Masculino<br>
+<input type="radio" name="sexo" value="femenino">Femenino<br>
     <input type="submit" value="Button" name="enviar">
      <input type="reset" value="Borrar" name="delete">
     
