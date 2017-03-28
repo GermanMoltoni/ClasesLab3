@@ -3,6 +3,8 @@
             action="": destinatario de informacion
             method=""  GET o POST
             input: entrada
+                id=" ": id del input
+                autofocus="": hace foco en el input ni bien inicia la pagina
                 type="": tipo
                     text: texto
                     password: contraseña
@@ -13,6 +15,7 @@
                 name="": nombre de la variable que va en el post o get
                 size="": cantidad de caracteres visibles
                 value=" ": aparece una frase pre cargada
+                placeholder="": Muestra un mensaje en gris claro, cuando escribo se borra
             textarea: ingreso de texto
                 name="": nombre de la caja de texto
                 id="":id para js
@@ -31,7 +34,9 @@
             fieldset: grupo de controles con un marco y un titulo
                 legend: crea leyenda del grupo
             tabindex: propiedad para cualquier etiqueta, enteros, que dan orden a que el cursor se desplace con tab
-            
+            label: hace foco en donde haga clic, puedo poner el input dentro del label
+                for="": indica el id del elemento a enfocar
+                name="": nombre del label
 -->
 
 
@@ -46,8 +51,8 @@
     <fieldset >
         <legend> Datos </legend>
 
-Nombre:<input type="text" name="nombre" size="20" value="Nombre"><br>
-    Clave: <input type="password" name="pass" size="20"><br>
+ <label for="nombre" id="txtnombre">Nombre</label><input type="text" autofocus="autofocus" id="nombre" name="nombre" size="20" value="Nombre"><br>
+    <label> Clave: <input type="password" name="pass" size="20" placeholder="Clave"></label><br>
        
     
     </fieldset>
@@ -71,9 +76,10 @@ Nombre:<input type="text" name="nombre" size="20" value="Nombre"><br>
 <input type="checkbox" value="checkbox">check<br>
 <input type="radio" name="sexo" value="masculino">Masculino<br>
 <input type="radio" name="sexo" value="femenino">Femenino<br>
+
     <input type="submit" value="Button" name="enviar">
      <input type="reset" value="Borrar" name="delete">
-    
+     
 </form>
 </body>
 </html>
