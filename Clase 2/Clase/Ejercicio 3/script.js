@@ -4,17 +4,21 @@
 
 
     EVENTOS PARA TECLAS
-    onkeydown
-    onkeyup
-    onkeypress
+    onkeydown cuando se presiona la tecla se produce el evento
+    onkeyup Cuando suelto la tecla se produce el cambio
+    onkeypress Cuando mantengo presionada se produce  el evento
  */
 window.onload =  function()
 {
-    var txt = document.getElementById("texto");
-    var txt1 = document.getElementById("texto1");
+    var txtUno = document.getElementById("txtuno");
+    var txtDos = document.getElementById("txtdos");
 
-    txt.onblur =  function()
-    {
-        txt1.value = txt.value;
-    }
+    // txtUno.onblur =  function() // txtUno.onchange =  function()
+    // {
+    //     txtDos.value = txtUno.value;
+    // }
+     txtUno.onkeypress =  function()//txtUno.onkeyup =  function()//txtUno.onkeydown =  function()
+     {
+         txtDos.value = txtUno.value;
+     }
 }
