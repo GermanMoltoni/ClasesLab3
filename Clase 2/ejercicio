@@ -1,0 +1,1 @@
+pido datos al servidor, recibo un json de personas, pregunto el .lenght para saber la cantidad de personas y generar la tabla mediante js y cargamos los elementos 
