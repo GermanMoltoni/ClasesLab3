@@ -1,4 +1,4 @@
-var string = prompt("Ingresar Texto: ").split();
+var string = prompt("Ingresar Texto: ").split(" ");
 var mayus = 0;
 var min = 0;
 for(var i=0;i<=string.length;i++)
