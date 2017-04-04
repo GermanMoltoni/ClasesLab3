@@ -17,7 +17,7 @@ window.onload =  function()
     // {
     //     txtDos.value = txtUno.value;
     // }
-     txtUno.onkeypress =  function()//txtUno.onkeyup =  function()//txtUno.onkeydown =  function()
+     txtUno.onchange =  function()//txtUno.onkeyup =  function()//txtUno.onkeydown =  function()
      {
          txtDos.value = txtUno.value;
      }
