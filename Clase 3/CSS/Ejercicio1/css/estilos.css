@@ -23,6 +23,21 @@ body{
     /*background-image: url(../images/f1.jpg);*//*foto de fondo de pantalla*/
 
 }
+h6{
+    border-width: 4px;/*ancho de borde*/
+    color: brown;
+    border-style: ridge;/* borde */
+    /*padding: 30px;*/
+    /* padding: (left & right) (top & bottom ); 5px 10px
+        padding : top bottom right left*/
+    padding: 30px 10px 4px 23px;
+    margin: 20px 53px;/* Mismo que margin*/
+}
+
+/*
+    Padding : distancia entre borde y texto
+    Margin: Distancia entre bode de control y resto de los controles
+*/
 /*Reglas por clases*/
 .vistoso
 {
