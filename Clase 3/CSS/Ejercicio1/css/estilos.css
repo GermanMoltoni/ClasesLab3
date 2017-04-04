@@ -1,3 +1,36 @@
+
 h3{
-    color: greenyellow;
+    color: greenyellow;/* color de letras*/
+    font-family: Arial, Helvetica, sans-serif; /* Los tipos estan por orden de uso*/
+    font-size: 34px;/*Modifica tamaño de letra*/
+    font-style: italic; /* tipo de letra*/
+    font-weight: 100; /*Cambia ancho de letra*/
+}
+/*h4{ todo en una linea
+    font: font-weight font-style font-size font-family;
+}*/
+h4,h5{
+    font: 200 italic 25px Arial;
+    background-color: lightblue;
+    text-align: center;
+    text-decoration:  underline; /*underline line-throw overline*/
+    letter-spacing: 10px; /*Distancia entre letras*/
+    word-spacing: 5px; /*Separacion entre palabras*/
+    text-transform: capitalize;/* lowercase uppercase transforma el texto segun la propiedad*/
+}
+body{
+    background-color: cornflowerblue;/*Color de fondo del body*/
+    /*background-image: url(../images/f1.jpg);*//*foto de fondo de pantalla*/
+
+}
+/*Reglas por clases*/
+.vistoso
+{
+    color: red;
+    font-family: Courier New, Courier, monospace;
+}
+/*Nombre de id en html*/
+#parrafoEspecial
+{
+    color: fuchsia;
 }
