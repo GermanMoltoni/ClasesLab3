@@ -17,6 +17,7 @@ h4,h5{
     letter-spacing: 10px; /*Distancia entre letras*/
     word-spacing: 5px; /*Separacion entre palabras*/
     text-transform: capitalize;/* lowercase uppercase transforma el texto segun la propiedad*/
+    display: inline;
 }
 body{
     background-color: cornflowerblue;/*Color de fondo del body*/
@@ -48,4 +49,41 @@ h6{
 #parrafoEspecial
 {
     color: fuchsia;
+}
+
+/*
+
+*{
+ selector universal
+}
+
+*/
+/* Reglas se aplica a todo 2 que se encuentre dentro de 1
+1 2{
+    color: red;
+
+
+}
+
+
+
+*/
+div span{
+    color:red;
+}
+
+/*
+  primer elemento que este al lado del segundo
+*/
+
+
+h5 + p{
+    color:yellow;
+}
+/*
+elemento que le siga a otro elemento
+*/
+p ~ p
+{
+    color:blue;
 }
