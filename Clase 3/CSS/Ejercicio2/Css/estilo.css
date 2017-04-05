@@ -1,0 +1,16 @@
+/*cuando visito la pagina pongo el link en rojo*/
+a:visited{
+    color: red;
+}
+/*Cuando paso por arriba cambia el color*/
+p:hover{
+    background: blue;
+}
+
+a:link{
+    color: orange;
+}
+/*  Cuando hago foco se cambia el color de fondo*/
+textarea:focus{
+    background: black;
+}
