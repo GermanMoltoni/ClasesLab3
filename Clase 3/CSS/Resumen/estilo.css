@@ -1,0 +1,94 @@
+/*
+font-family: Tipos de letras, se encuentran en orden de prioridad
+font-size: tamaño de texto
+font-style: tipo de letra
+font-weight: ancho de letra.
+background-color: color de fondo
+text-align: alineacion de texto
+text-decoration: Subrayado, linea sobre texto, tachado
+letter-spacing: espacio entre letras px
+word-spacing: espacio entre palabras
+text-transform: capitalize
+display: Forma de ver texto
+border-width: tamaño de borde
+border-style: tipo de borde ryado, punteado, continuo
+padding: 30px;
+padding: (left & right) (top & bottom ); 5px 10px
+padding : top bottom right left
+padding: 30px 10px 4px 23px;
+margin: 20px 53px; Mismo que margin
+
+*/
+
+
+
+/*
+Referencia por palabra clave
+*/
+h1{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+Referencia por Id Unico
+*/
+#p1{
+    color:green;
+}
+/*
+Referencia por Clase
+*/
+.clase{
+    font-size: 10px;
+}
+/*
+Referencia Universal
+*/
+*{
+    font-family: Courier New, Courier, monospace;
+}
+/*
+Afecta al elemento de la derecha cuando tiene como padre al elemento izquierdo
+*/
+div  p{
+    color:fuchsia;
+    font-size: 25px;
+}
+/*
+Afecta al elemento que se encuentre luego del primero
+Elemento h4 que siga luego de div sera de color coral.
+*/
+div + h4{
+    color:coral;
+}
+/*
+Afecta  a los elementos hermanos del elemento que le sigue al padre.
+Todo h5 que se encuentre luego de p sera de color verde.
+*/
+p ~ h5{
+    color:green;
+}
+/*
+Eventos en CSS
+focus: cambia cuando hace foco
+hover: cambia cuando estoy sobre el elemento
+*/
+textarea:focus{
+    background-color: red;
+}
+textarea:hover{
+    background-color: coral;
+}
+table{
+    border-style: inset;
+}
+.tabla{
+    background-color: cornflowerblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    display: inline-block;
+}
+body{
+    background-color:skyblue;
+}

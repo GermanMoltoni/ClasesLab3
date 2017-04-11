@@ -1,0 +1,12 @@
+.titulo{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 45px;
+    text-align: center;
+    text-decoration:underline;
+}
+#p1{
+    font-size: 25px;
+}
+body{
+    background-color: beige;
+}

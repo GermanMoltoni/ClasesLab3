@@ -1,4 +1,13 @@
-function cambiarColor()
+
+
+var txtColor = document.getElementById('txtColor');
+var color = txtColor.value;
+cambiarColor(txtColor,color);
+
+function cambiarColor(id,color)
 {
-    onblur
+    id.onblur = function()
+    {
+        document.write("sadsad");
+    }
 }
