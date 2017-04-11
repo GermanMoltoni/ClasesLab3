@@ -1,0 +1,4 @@
+function cambiarColor()
+{
+    onblur
+}
