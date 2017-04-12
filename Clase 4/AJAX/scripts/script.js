@@ -1,6 +1,6 @@
 
 window.addEventListener('load',inicializarEventos,false);
-// Se crea el evento ya que hay que esperar a que se cargue la pagina par aque exista el boton
+// Se crea el evento ya que hay que esperar a que se cargue la pagina para que exista el boton
 function inicializarEventos(){
     var button = document.getElementById('submit');
     button.addEventListener('click',load);
