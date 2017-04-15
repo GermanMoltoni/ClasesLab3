@@ -5,11 +5,11 @@ function inicializarEventos(){
     var button = document.getElementById('submit');
     button.addEventListener('click',load);
 }*/
-
+//http://germanmoltoni.esy.es/php/mostrar.php
 function load()
 {
     var req = new XMLHttpRequest();
-    req.open("GET","http://germanmoltoni.esy.es/php/mostrar.php",true);//GET(method),url_de_recurso,true(async)
+    req.open("GET","http://localhost/clasesProg3/Tp/php/mostrar.php",true);//GET(method),url_de_recurso,true(async)
     //req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//POST
     /*
         request type:
