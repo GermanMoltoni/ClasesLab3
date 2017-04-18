@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="script.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="container row" id="miDiv">
-        
+    <div class="container-fluid">
+        <fieldset>
+            <legend class="text-center page-header">
+                <h2>Empleados</h2>
+            </legend>
+                <div class=" navbar row pull-right">
+                    
+                    <button class="btn btn-danger navbar-btn" onclick="baja()">Baja</button>
+                    <button class="btn btn-success navbar-btn" onclick="modif()">Modificar</button>
+                </div>
+            <div class="row " id="miDiv">
+
+            </div>
+        </fieldset>
     </div>
-    <div class="btn-group">
-        <button onclick="baja()">Baja</button>
-        <button onclick="modif()">Modificar</button>
-    </div>
-    
-    
     
 </body>
 </html>
