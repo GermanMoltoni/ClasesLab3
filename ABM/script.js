@@ -1,9 +1,9 @@
 var req = new XMLHttpRequest();
-function Ajax(url,method,func)
+function Ajax(url,method,func,dates=null)
 {
     req.open(method,url,true);
     req.onreadystatechange = func;
-    req.send(null);
+    req.send(dates);
 }
 
 
