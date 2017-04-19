@@ -11,6 +11,8 @@ window.addEventListener('load',inicializarEventos,false);
 function inicializarEventos(){
     var btnAlta = document.getElementById('btnAdd');
     btnAlta.addEventListener('click',alta);
+    //var btnFile = document.getElementById('file');
+    //btnFile.addEventListener('change',uploadFile);
 }
 
 function alta(){
@@ -20,19 +22,28 @@ function alta(){
     var txtDni = document.getElementById('dni').value;
     var txtLegajo = document.getElementById('legajo').value;
     var txtSueldo = document.getElementById('sueldo').value;
-    var fileImage = document.getElementById('foto').value;
-    var obj = {'nombre':'txtNombre','apellido':'txtApellido','dni':txtDni,'sexo':'asd','legajo':txtLegajo,'foto':fileImage};
-    Alta(obj);
+    var fileImage = document.getElementById('file');
+    if(fileImage.files.length == 1)
+    {
+        var obj = {'nombre':txtNombre,'apellido':txtApellido,'dni':txtDni,'sexo':'asd','legajo':txtLegajo,'foto':fileImage.files[0]};
+        Alta(obj);
+    }
+    //var file = document.getElementByName('sexo')[0].checked;
+    //alert(document.getElementByName('sexo').lenght);
+    
 }
 
+function uploadFile()
+{
 
+}
 
 
 
 function Alta(obj)
 {
     
-    Ajax("http://localhost/clasesProg3/Tp/php/administracion.php","POST",testState,"datos="+JSON.stringify(obj));
+    Ajax("http://localhost/clasesProg3/Tp/php/administracion.php","POST",testState,"alta="+JSON.stringify(obj));
     function testState(){
         if(req.readyState == 4 && req.status == 200)
             alert(req.responseText);//document.getElementById('miDiv').innerHTML = req.responseText;

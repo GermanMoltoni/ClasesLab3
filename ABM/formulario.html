@@ -12,7 +12,7 @@
     <div class="container ">
     <fieldset>
         <legend>Alta de Empleado</legend>    
-        <form enctype="multipart/form-data" method='POST'><!--action="http://localhost/clasesProg3/Tp/php/administracion.php" method="POST">-->
+        <form enctype="multipart/form-data"method='POST'><!--action="http://localhost/clasesProg3/Tp/php/administracion.php" method="POST">-->
             <div class="form-group col-md-4 col-sm-4">
                 <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" placeholder="Juan" tabindex="1" id="nombre" name="nombre">
@@ -41,7 +41,7 @@
             <div class="form-group col-md-4 col-sm-4">
                 <label for="foto">Imagen</label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="1024000" />
-                <input type="file" class="form-control" accept="image/*" id='foto' name="foto"><br>
+                <input type="file" class="form-control" accept="image/*" id='file' name="foto"><br>
             </div>
             <div class="btn-group col-md-2 col-sm-2">
             <button type="submit" class="form-control btn btn-success" name="alta" id='btnAdd' value="add">Alta</button>
