@@ -23,11 +23,11 @@ function alta(){
     var txtLegajo = document.getElementById('legajo').value;
     var txtSueldo = document.getElementById('sueldo').value;
     var fileImage = document.getElementById('file');
-    if(fileImage.files.length == 1)
-    {
-        var obj = {'nombre':txtNombre,'apellido':txtApellido,'dni':txtDni,'sexo':'asd','legajo':txtLegajo,'foto':fileImage.files[0]};
-        Alta(obj);
-    }
+    //if(fileImage.files.length == 0)
+    //{
+        var obj = {'nombre':txtNombre,'apellido':txtApellido,'dni':txtDni,'sexo':'masculino','sueldo':txtSueldo,'legajo':txtLegajo};
+        Alta(fileImage.files[0]);
+    //}
     //var file = document.getElementByName('sexo')[0].checked;
     //alert(document.getElementByName('sexo').lenght);
     
@@ -43,7 +43,7 @@ function uploadFile()
 function Alta(obj)
 {
     
-    Ajax("http://localhost/clasesProg3/Tp/php/administracion.php","POST",testState,"alta="+JSON.stringify(obj));
+    Ajax("http://localhost/clasesProg3/Tp/php/administracion.php","POST",testState,obj);
     function testState(){
         if(req.readyState == 4 && req.status == 200)
             alert(req.responseText);//document.getElementById('miDiv').innerHTML = req.responseText;
