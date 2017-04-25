@@ -4,7 +4,7 @@ $(document).ready( function(){
     $("#btnEnviar").click(function(){
         
         $.ajax({
-            url:'pagina.php',
+            url:'pagina1.php',
             type:'GET',
             data:{nombre: $('#txtNombre').val(), apellido: $('#txtApellido').val()},
             statusCode:{200:function(){

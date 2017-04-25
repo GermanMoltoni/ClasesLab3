@@ -1,14 +1,14 @@
 $(document).ready( function(){
 
-    $("#btnEnviar").click(envioStd());
+    $("#btnEnviar").click(envioFormData());
 
 });
 
 function envioFormData(){
 
-    var formData = new formData();
-    formData.append("nombre", $("#txtNombre".val()));
-    formData.append("apellido", $("#txtApellido".val()));
+    var formData = new FormData();
+    formData.append("nombre", $("#txtNombre").val());
+    formData.append("apellido", $("#txtApellido").val());
 
      $.ajax({
             url:'pagina1.php',
