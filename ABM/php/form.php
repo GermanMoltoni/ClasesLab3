@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  crossorigin="anonymous">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<?php
 
-<script src="scriptJQ.js"></script>
-    <title>Formulario Alta</title>
-</head>
-<body class="bg-info">
-    <div class="container ">
-    <fieldset>
-        <legend>Alta de Empleado</legend>    
-        
-            <div class="form-group col-md-4 col-sm-4">
+ echo '
+ <div class="form-group col-md-4 col-sm-4">
                 <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" placeholder="Juan" tabindex="1" id="nombre" name="nombre">
             </div>
@@ -34,7 +20,7 @@
              </div>
              <div class="form-group col-md-3 col-sm-2"> 
                 <label for="legajo">Legajo</label>
-                <input type="text"  class="form-control" id='legajo' name="legajo">
+                <input type="text"  class="form-control" id="legajo" name="legajo">
             </div>
             <div class="form-group col-md-3 col-sm-3">
                 <label for="sueldo">Sueldo</label>
@@ -43,14 +29,20 @@
             <div class="form-group col-md-4 col-sm-4">
                 <label for="foto">Imagen</label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="1024000" />
-                <input type="file" class="form-control" accept="image/*" id='file' name="foto"><br>
+                <input type="file" class="form-control" accept="image/*" id="file" name="foto"><br>
             </div>
             <div class="btn-group col-md-2 col-sm-2">
-            <button type="submit" class="form-control btn btn-success" name="alta" id='btnAdd' value="add">Add</button>
+            <button type="submit" class="form-control btn btn-success" name="alta" id="btnAdd" value="add">Add</button>
             </div>
-      
-    </fieldset>
-    <div id='miDiv'></div>
-    </div>   
-</body>
-</html>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ';
+
+?>
