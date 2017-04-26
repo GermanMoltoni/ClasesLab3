@@ -2,8 +2,9 @@
     require_once "entidades/empleado.php";
     require_once "entidades/fabrica.php";
     require_once "archivos.php";
-    var_dump($_POST);
+    
     $path="../datos/empleados.txt";
+    var_dump($_FILES);
     if(array_key_exists("alta",$_POST) && $_POST['alta'] == "add")
         echo"asdsad";//alta($_POST,$_FILES,$path);
     if(array_key_exists("baja",$_POST))

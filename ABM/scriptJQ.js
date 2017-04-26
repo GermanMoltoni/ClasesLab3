@@ -1,38 +1,58 @@
 $(document).ready(function(){
     $("#btnAlta").click(altaForm);
     $("#btnGrilla").click(mostrarGrilla);
-    $("#btnAdd").click(alta);
+    
 });
 
-/* 
-*Agrega un formulario de alta a la pagina
-*/
-var altaForm = function(){
-    $.ajax({
-            'url':'./php/form.php',
-            'type':'POST'
-        }).done(function(data){
-            $("#miDiv").html(data);
-        }
-        ).fail().always();}
-
+function btnSend(){
+        if($("#btnSend").val() != 'add')
+            modificar();
+        else
+            alta();
+    };
 /**
  * Envia los datos del formulario al servidor y redirige al index.
  */
 var alta = function alta(){
     $.ajax({
-            'url':'./php/administracion.php',
-            'type':'POST',
-            'cache': false,
-            'contentType': false,
-            'processData': false,
-             enctype: 'multipart/form-data',
+            url:'./php/administracion.php',
+            type:'POST',
+            cache: false,
+            contentType: false,
+            processData: false,
+            enctype: 'multipart/form-data',
             'data':form()
         }).done(function(data){
-            window.location="./index.html";
-            alert("Empleado cargado");
+            //window.location="./index.html";
+            alert(data);
         }).fail().always();
 }
+
+/**
+ * Envia el formulario modificado al servidor, luego muestra la grilla
+ */
+function modificar(){
+    $.ajax({
+            url:'./php/administracion.php',
+            type:'POST',
+            cache: false,
+            contentType: false,
+            processData: false,
+            enctype: 'multipart/form-data',
+            data:{form:form(),id:$("#btnAdd").val()}
+        }).done(function(data){
+            mostrarGrilla();
+        }).fail().always();  
+}
+
+
+
+
+
+
+
+
+
 
 /**
  * Redibe un id a dar de baja y lo envia al servidor, luego muestra la grilla
@@ -49,37 +69,21 @@ function baja(id){
         ).fail().always();
 }
 
-/**
- * Mustra la grilla pedida al servidor
- */
-var mostrarGrilla = function (){
-   $.ajax({
-            'url':'./php/mostrar.php',
+/* 
+*Agrega un formulario de alta a la pagina
+*/
+var altaForm = function(){
+    $.ajax({
+            'url':'./php/form.php',
             'type':'POST'
         }).done(function(data){
             $("#miDiv").html(data);
         }
         ).fail().always();
-}
+    }
 
-/**
- * Envia el formulario modificado al servidor, luego muestra la grilla
- */
-function modificar(){
-    $.ajax({
-            'url':'./php/administracion.php',
-            'type':'POST',
-            'cache': false,
-            'contentType': false,
-            'processData': false,
-             enctype: 'multipart/form-data',
-            'data':{form:form(),id:$("#btnAdd").val()}
-        }).done(function(data){
-            mostrarGrilla();
-        }
-            
-        ).fail().always();  
-}
+
+
 /**
  * 
  * Recibe un obj js y lo muestra en un formulario.
@@ -97,7 +101,18 @@ function mostrarForm(obj)
         });
 }
 
-
+/**
+ * Mustra la grilla pedida al servidor
+ */
+var mostrarGrilla = function (){
+   $.ajax({
+            'url':'./php/mostrar.php',
+            'type':'POST'
+        }).done(function(data){
+            $("#miDiv").html(data);
+        }
+        ).fail().always();
+}
 
 
 

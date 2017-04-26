@@ -32,10 +32,10 @@
                 <input type="file" class="form-control" accept="image/*" id="file" name="foto"><br>
             </div>
             <div class="btn-group col-md-2 col-sm-2">
-            <button type="submit" class="form-control btn btn-success" name="alta" id="btnAdd" value="add">Add</button>
+            <button type="submit" class="form-control btn btn-success" name="alta" id="btnSend" onClick=btnSend() value="add">Add</button>
             </div>
  
- 
+ </div>
  
  
  
