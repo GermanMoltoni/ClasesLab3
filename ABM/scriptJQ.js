@@ -20,7 +20,6 @@ var alta = function alta(){
             cache: false,
             contentType: false,
             processData: false,
-            enctype: 'multipart/form-data',
             'data':form()
         }).done(function(data){
             //window.location="./index.html";
@@ -38,7 +37,6 @@ function modificar(){
             cache: false,
             contentType: false,
             processData: false,
-            enctype: 'multipart/form-data',
             data:{form:form(),id:$("#btnAdd").val()}
         }).done(function(data){
             mostrarGrilla();
@@ -140,6 +138,6 @@ function form(){
     formData.append('legajo',$("#legajo").val());
     formData.append('dni',$("#dni").val());
     formData.append('sueldo',$("#sueldo").val());
-    formData.append('img',$("#file").val());
+    formData.append('img',document.getElementById('file').files[0]);
     return formData;
 }
