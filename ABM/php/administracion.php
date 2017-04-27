@@ -3,14 +3,18 @@
     require_once "entidades/fabrica.php";
     require_once "archivos.php";
     $path="../datos/empleados.txt";
-    if(array_key_exists("button",$_POST) && $_POST['button'] == "add")
-        alta($_POST,$_FILES,$path);
-    if(array_key_exists("baja",$_POST))
+    var_dump($_POST);
+    if(array_key_exists("button",$_POST))
+    {
+        if($_POST['button'] == "add")
+            alta($_POST,$_FILES,$path);
+        else
+            modificar($_POST,$_FILES,$path);
+    }
+    elseif(array_key_exists("baja",$_POST))
         baja(json_decode($_POST['baja'])->legajo,$path);
-    if(array_key_exists("modif",$_POST))
-        modif(json_decode($_POST['modif'])->legajo,$path);
         
-
+        
 
 /*
 *   Da el alta de un empleado
@@ -73,6 +77,15 @@
         }
         return false; 
 
+    }
+    function modificarFoto($FILES,$empleado)
+    {
+        
+    }
+    function modificar($POST,$FILES,$path)
+    {
+        baja($POST['button'],$path);
+        alta($POST,$FILES,$path);
     }
 
 ?>

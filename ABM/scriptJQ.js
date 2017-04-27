@@ -22,8 +22,7 @@ var alta = function alta(){
             processData: false,
             data:form()
         }).done(function(data){
-            //window.location="./index.html";
-            alert(data);
+            window.location="./index.html";
         }).fail().always();
 }
 
@@ -37,8 +36,9 @@ function modificar(){
             cache: false,
             contentType: false,
             processData: false,
-            data:{form:form(),id:$("#btnAdd").val()}
+            data:form()
         }).done(function(data){
+            alert(data);
             mostrarGrilla();
         }).fail().always();  
 }
