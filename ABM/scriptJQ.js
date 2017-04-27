@@ -20,7 +20,7 @@ var alta = function alta(){
             cache: false,
             contentType: false,
             processData: false,
-            'data':form()
+            data:form()
         }).done(function(data){
             //window.location="./index.html";
             alert(data);
@@ -127,17 +127,27 @@ function cargarForm(obj){
             $("#sueldo").val(obj.sueldo);
             $("#apellido").val(obj.apellido);
             $("#legajo").val(obj.legajo);
+            if(obj.sexo == 'masculino')
+                $("#masculino").attr('checked', true);
+            else
+                $("#femenino").attr('checked', true);
+            $("#btnSend").val(obj.legajo);
 }
 /**
  * Obtiene los datos del formulario y devuelve un obj formdata
  */
 function form(){
     var formData = new FormData();
+    formData.append('button',$("#btnSend").val());
     formData.append('nombre',$("#nombre").val());
     formData.append('apellido',$("#apellido").val());
     formData.append('legajo',$("#legajo").val());
     formData.append('dni',$("#dni").val());
     formData.append('sueldo',$("#sueldo").val());
-    formData.append('img',document.getElementById('file').files[0]);
+    if($("#masculino").is(':checked'))
+        formData.append('sexo','masculino');
+    else if ($("#femenino").is(':checked'))
+        formData.append('sexo','femenino');
+    formData.append('file',document.getElementById('file').files[0]);
     return formData;
 }
