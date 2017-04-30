@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnAdd").click(function(){
+            $.ajax({
+                    url:'server.php',
+                    type:'POST',
+                    cache: false,
+                    dataType: 'json',
+                    contentType: "application/json",
+                    //contentType: false,
+                    //processData: false,
+                    data:JSON.stringify({codBarra:$("#codBarra").val(),nombre:$("#nombre").val(),precio:$("#precio").val()})
+
+                }).done(function(data){alert(data);console.log(data)}).fail().always();
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="codBarra"><br>
+    <input type="text" id="nombre"><br>
+    <input type="text" id="precio"><br>
+    <button id="btnAdd" value="send" type="submit">Send</button>
+</body>
+</html>
