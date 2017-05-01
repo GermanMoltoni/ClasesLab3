@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+                var obj1 = {codBarra:126,nombre:'Crema',precio:45};
+                var json = JSON.stringify(obj1);
+            $.ajax({
+                    url:'mostrarJson.php',
+                    type:'POST',
+                    cache: false,
+                    //contentType: false,
+                    //processData: false,
+                    //contentType: "application/json; charset=utf-8",
+                    //dataType: "json",
+                    //dataType: 'text',
+                    data:{datos:json}
+                }).done(function(data){
+                    alert(data);
+                });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

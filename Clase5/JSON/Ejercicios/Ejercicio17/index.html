@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnAgregar").click(function(){
+                var obj = {"id":201,"slogan":"matrix 24/7 partnerships","size":"XL","price":"$544","color":"Teal","manofacturer":{"name":"Zoomzone","logo":"https://robohash.org/authicperferendis.bmp?size=50x50&set=set1","location":{"country":"Argentina","city":"Oncativo"}}};
+                $.ajax({
+                        url:'administrarRemeras.php',
+                        type:'POST',
+                        cache: false,
+                        data:{opt:'AgregarRemera',dato:JSON.stringify(obj)}
+                    }).done();});});
+    </script>
+</head>
+<body>
+    <button id="btnAgregar" type="submit">Agregar Remera</button>
+<div id="myDiv"></div>
+</body>
+</html>

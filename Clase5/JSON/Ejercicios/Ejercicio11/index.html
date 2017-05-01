@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnMostrar").click(function(){
+                $.ajax({
+                        url:'administrarCiudades.php',
+                        type:'POST',
+                        cache: false,
+                        data:{opt:'traerCiudades'}
+                    }).done(function(data){
+                        console.log(data);
+                        objJson = JSON.parse(data);
+                        string = "<table>"
+                        for (var index = 0; index < objJson.length; index++) {
+                            string+="<tr><td>"+objJson[index]._id+"</td><td>"+objJson[index].name+"</td><td>"+objJson[index].country+"</td><td>"+objJson[index].coord.lon+"</td><td>"+objJson[index].coord.lat+"</td></tr>";
+                        }
+                        string+="</table>";
+                        $("#myDiv").html(string);});
+                });
+            
+
+
+
+            $("#btnAgregar").click(function(){
+                $.ajax({
+                        url:'administrarCiudades.php',
+                        type:'POST',
+                        cache: false,
+                        data:{opt:'AgregarCiudad',ciudad:crearCiudadJson()}
+                    }).done();});
+           
+            
+         });
+        
+
+        function crearCiudadJson(){
+            var obj = {"_id":$("#id").val(),"name":$("#name").val(),"country":$("#country").val(),"coord":{"lon":$("#lon").val(),"lat":$("#lat").val()}}
+            return JSON.stringify(obj);
+    }
+    </script>
+</head>
+<body>
+<div id="myDiv"></div>
+    <label for="name">City</label>
+    <input type="text" id="name"><br>
+    <label for="country">Country</label>
+    <input type="text" id="country"><br>
+    <label for="lat">Latitude</label>
+    <input type="text" id="lat"><br>
+    <label for="lon">Lon</label>
+    <input type="text" id="lon"><br>
+    <label for="id">Id</label>
+    <input type="text" id="id"><br>
+    <button id="btnMostrar" type="submit">Mostrar</button>
+
+    <button id="btnAgregar" type="submit">Agregar</button>
+</body>
+</html>

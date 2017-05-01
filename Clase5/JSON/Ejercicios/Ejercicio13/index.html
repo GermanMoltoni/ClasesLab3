@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#paises").change(function(){
+                $.ajax({
+                        url:'traerJson.php',
+                        type:'POST',
+                        cache: false,
+                    }).done(function(data){
+                        console.log(data);
+                        objJson = JSON.parse(data);
+                        string = "<select>"
+                        for (var index = 0; index < objJson.length; index++) {
+                            if(objJson[index].CodigoPais == $("#paises").val())
+                            {
+                                string+="<option value="+objJson[index].Id+">"+objJson[index].Ciudad+"</option>";
+                            }
+                        }
+                        string+="</select>";
+                        $("#myDiv").html(string);});
+         });});
+    </script>
+</head>
+<body>
+    <select name="" id="paises">
+        <option value="AR">Argentina</option>
+        <option value="FR">Francia</option>
+        <option value="GR">Grecia</option>
+        <option value="US">Usa</option>
+    </select>
+<div id="myDiv"></div>
+</body>
+</html>

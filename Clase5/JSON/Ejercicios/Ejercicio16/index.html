@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnMostrar").click(function(){
+                $.ajax({
+                        url:'administrarRemeras.php',
+                        type:'POST',
+                        cache: false,
+                        data:{opt:'traerRemerasFiltradasPorCampo'}
+                    }).done(function(data){
+                        console.log(data);
+                        objJson = JSON.parse(data);
+                        string = "<table>"
+                        for (var index = 0; index < objJson.length; index++) {
+                            switch ($("#filtro").val()) {
+                                case 'pais':
+                                    if(objJson[index].manofacturer.location.country == $("#txtOption").val())
+                                    {
+                                        string+="<tr><td>"+objJson[index].size+"</td><td>"+objJson[index].color+"</td><td>"+objJson[index].price+"</td><td>"+objJson[index].manofacturer.name+"</td><td><img src="+objJson[index].manofacturer.logo+"></td></tr>";
+                                    }
+                                    break;
+                                case 'talle':
+                                    if(objJson[index].size == $("#txtOption").val())
+                                    {
+                                        string+="<tr><td>"+objJson[index].size+"</td><td>"+objJson[index].color+"</td><td>"+objJson[index].price+"</td><td>"+objJson[index].manofacturer.name+"</td><td><img src="+objJson[index].manofacturer.logo+"></td></tr>";
+                                    }
+                                    break;
+                                case 'color':
+                                    if(objJson[index].color == $("#txtOption").val())
+                                    {
+                                        string+="<tr><td>"+objJson[index].size+"</td><td>"+objJson[index].color+"</td><td>"+objJson[index].price+"</td><td>"+objJson[index].manofacturer.name+"</td><td><img src="+objJson[index].manofacturer.logo+"></td></tr>";
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+                            
+                        }
+                        string+="</table>";
+                        $("#myDiv").html(string);});
+         });});
+    </script>
+</head>
+<body>
+    <select name="" id="filtro">
+        <option value="pais">Pais</option>
+        <option value="talle">Talle</option>
+        <option value="color">Color</option>
+    </select>
+    <input type="text" id="txtOption" placeholder=""><br>
+    <button id="btnMostrar" type="submit">Mostrar Remeras</button>
+<div id="myDiv"></div>
+</body>
+</html>

@@ -11,14 +11,23 @@
                 var obj = {codBarra:123,nombre:'Aceite',precio:50};
                 var obj1 = {codBarra:126,nombre:'Crema',precio:45};
                 var json = JSON.stringify([obj,obj1]);
-                console.log(JSON.parse(json));
-                var objJson = JSON.parse(json);
-                for(var i=0;i<objJson.length;i++)
-                    alert("Cod Barra "+objJson[i].codBarra+" Nombre "+objJson[i].nombre);
-
+            $.ajax({
+                    url:'mostrarColeccionJson.php',
+                    type:'POST',
+                    cache: false,
+                    //contentType: false,
+                    //processData: false,
+                    //contentType: "application/json; charset=utf-8",
+                    //dataType: "json",
+                    //dataType: 'text',
+                    data:{datos:json}
+                }).done(function(data){
+                    alert(data);
+                });
         });
     </script>
 </head>
 <body>
+    
 </body>
 </html>

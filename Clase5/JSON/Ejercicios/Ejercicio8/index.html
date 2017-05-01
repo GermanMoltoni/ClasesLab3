@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnMostrar").click(function(){
+
+            $.ajax({
+                    url:'traerAuto.php',
+                    type:'POST',
+                    cache: false,
+                }).done(function(data){
+                    objJson = JSON.parse(data);
+                    $("#Marca").val(objJson.Marca);
+                    $("#Precio").val(objJson.Precio);
+                    $("#Color").val(objJson.Color);
+                    $("#Modelo").val(objJson.Modelo);
+                });
+
+
+
+
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <label for="Marca">Marca</label>
+    <input type="text" id="Marca"><br>
+    <label for="Marca">Precio</label>
+    <input type="text" id="Precio"><br>
+    <label for="Marca">Modelo</label>
+    <input type="text" id="Modelo"><br>
+    <label for="Marca">Color</label>
+    <input type="text" id="Color"><br>
+    <button id="btnMostrar" type="submit">Mostrar</button>
+</body>
+</html>
