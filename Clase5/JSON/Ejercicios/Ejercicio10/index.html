@@ -14,10 +14,11 @@
                     url:'administrarCiudades.php',
                     type:'POST',
                     cache: false,
-                    data:{opt:'traerCiudades'}
+                    data:{opt:'traerCiudades'},
+                    dataType:'JSON',
                 }).done(function(data){
                     console.log(data);
-                    objJson = JSON.parse(data);
+                    objJson = data;//  objJson = JSON.parse(data);
                     string = "<table>"
                     for (var index = 0; index < objJson.length; index++) {
                         string+="<tr><td>"+objJson[index].name+"</td><td>"+objJson[index].country+"</td><td>"+objJson[index].coord.lon+"</td><td>"+objJson[index].coord.lat+"</td></tr>";
