@@ -17,7 +17,7 @@ var datosPost = {title: $("#texttitle").val(),header:$("#textheader").val(),post
             async:true,
             data:JSON.stringify(datosPost)
         }).done(function(data){
-                $("#post").html('<h2 style="color:'+getParameterByName("color",window.location)+' font:'+getParameterByName("font",window.location)+'">'+data.header+'</h2><h4>'+data.title+'</h4><h5>'+data.posttext+'</h5><h6>'+data.author+"  "+data.date+'</h6>');
+                $("#post").html('<div><h2 style="color:'+getParameterByName("color",window.location)+' font:'+getParameterByName("font",window.location)+'">'+data.header+'</h2><h4>'+data.title+'</h4><h5>'+data.posttext+'</h5><h6>'+data.author+"  "+data.date+'</h6></div>');
 }).fail().always();
 }
  function getParameterByName(name, url) {
