@@ -2,6 +2,12 @@ $(document).ready(function(){
     $("#btnHacerPost").click(function(){
         $("#form").html('<div class="form-group col-md-4 col-sm-4"><label for="titulo">Titulo</label><input type="text" class="form-control" placeholder="Titulo" tabindex="1" id="texttitle"></div><div class="form-group col-md-4 col-sm-4"><label for="header">Header</label><input type="text" class="form-control" placeholder="" tabindex="2" id="textheader"></div><div class="form-group col-md-4 col-sm-4"><label for="posttext">Text</label><input class="form-control" type="text" placeholder="text" id="posttext" ></div><div class="btn-group col-md-2 col-sm-2"><button type="submit" class="form-control btn btn-success"  id="btnPost" onClick=btnPost() value="post">Post</button></div></div>');
     });
+$("#btnLogout").click(function(){
+    localStorage.removeItem("autor");
+    localStorage.removeItem("color");
+    localStorage.removeItem("font");
+});
+
     });
 
 
