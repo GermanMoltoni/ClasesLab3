@@ -1,6 +1,9 @@
 {
-  "name": "Bower",
+  "name": "Ejercicio",
   "homepage": "https://github.com/GermanMoltoni/clasesLab3",
+  "authors": [
+    "German Moltoni <german.moltoni@gmail.com>"
+  ],
   "description": "",
   "main": "",
   "license": "MIT",
@@ -10,5 +13,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrapvalidator": "^0.5.3"
+  }
 }
