@@ -26,7 +26,10 @@ console.log(nombre);
 var mayoresDeDos = mascotas.filter(function(mascotas){
     return mascotas.edad > 2;
 });
-console.log(edad);
+console.log(mayoresDeDos);
 
-
-var 
+var numeros = [1,2,4,3];
+var reduce = numeros.reduce(function(elemAnterior,elemActual){
+    return elemAnterior + elemActual;
+});
+console.log(reduce);
