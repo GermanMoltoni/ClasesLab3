@@ -1,4 +1,0 @@
-tsc --init
-cada vez que cambio tsconfig.json hago tsc
-tsc --watch   detecta cambios en cualquier archivo y transpila automaticamente
-tsc --outFile app.js app1 app2

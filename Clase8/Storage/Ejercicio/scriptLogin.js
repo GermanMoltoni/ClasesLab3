@@ -10,7 +10,7 @@ $(document).ready(function(){
         }).done(function(obj){
            if(obj.autenticado == "si")
                 {
-                    if(typeof(Storage) != "undefined")
+                    if(typeof(Storage) != undefined)
                     {
                         localStorage.setItem("autor",datosLogin.email);
                         localStorage.setItem("color",obj.preferencias.color);

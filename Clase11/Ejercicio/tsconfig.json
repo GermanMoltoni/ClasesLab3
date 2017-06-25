@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": true, /*Permite debuguear en navegador*/
+        "removeComments": true,/* eueve comentarios al transpilar*/
+        "outFile": "true" /*Concatena archivos en uno solo "nombre de archivo final"*/
+    }
+}

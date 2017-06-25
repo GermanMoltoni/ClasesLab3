@@ -1,0 +1,54 @@
+var: Alcance global
+let: solo es valida en el bloque donde se encuentra declarada.
+
+null: variables
+undefined: tipos de datos
+Tipos:
+    - Boolean
+    - Number
+    - String
+    - Any:Admite cualquier tipo de dato. Ej let todo:any='hola'; any=120;
+
+- Arrays:
+    let array:number[]
+    let array:string[]
+    let array:any[]
+
+- Tuplas:
+    let alumno:[number,string]=[123000,'German'];
+
+- Enumerados: si no tiene valores establecidos, comienza en uno=0,dos=1. de tener, sigue el valor consecutivo.
+    enum Enumerado{
+        uno,
+        dos,
+        tres
+    }
+
+
+- Funciones
+    function nombre_funcion():tipo_retorno{}
+    function saludar():string{ return 'hola';}
+    let referencia_funcion = function(){};
+    referencia_funcion();//Ejecuto la funcion que se encuentra en la variable
+
+
+    - Parametros
+        - Obligatorios: function obligatorio(x:number,y:number):number{return x+y;}
+        - Opcionales: function opcional(nombre:string,apellido?:string):string{if(apellido){return nombre+''+apellido;}else{return nombre;}}
+        - Por defecto: function ejemplo(nombre:string,color:string='negro'):string{return nombre+''+color;}
+        - Rest: Toma como un array los parametros pasados luego de los declarados. Ej function ejemplo(nombre:string...array:string[]):string{return nombre+''+array.join('');}
+        - Funcion:(se definen los parametros a pasar y retornar, solo acepta la funcion que tenga la misma firma Ej:obligatorio) let funcion:(x:number,y:number)=>number;
+
+
+
+    - Objetos
+        - Basico: let objeto = {nombre:'German',id=1};
+        - Tipo Objeto: let objeto:{nombre:string,id:number}={nombre:'German',id=1};
+        - Metodos: {nombre:string,mostrarNombre:()=>string}={nombre:'German',mostrarNombre():string{return this.nombre;}};
+        - Tipo personalizado: type Empleado:{nombre:string,mostrarNombre:()=>string}; let german:Empleado;
+    
+    - Permitir multiples tipos
+        let array:string[] | number[] | boolean;
+
+    - Revisar tipo:
+        let variable:any = 123; typeof(variable);
