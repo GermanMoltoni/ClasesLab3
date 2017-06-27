@@ -40,46 +40,65 @@ var MAIN = (function (DATA) {
   };
 
   // Retornar un objeto que contenga solo el nombre y la edad (name y age) del usuario mas grande.
-  lib.olderUser = function (age) {
-
+  lib.olderUser = function () {
+      return DATA.map(function(user){
+        return user.name+' '+user.age;
+      });
   };
 
   // Retornar el promedio de edad de los usuarios (number)
-  lib.userAgeAverage = function (age) {
-    return DATA.reduce(function(anterior,actual){
+  lib.userAgeAverage = function () {
+    var indexA;
+    var number = DATA.reduce(function(anterior,actual,index){
+        indexA=index;
         return anterior + actual.age;
-    })/DATA.lenght;
+    },0);
+    return parseFloat(number)/(indexA+1);
   };
 
   // Retornar el promedio de edad de los usuarios hombres (number)
-  lib.userMaleAgeAverage = function (age) {
-    return DATA.filter(function (user) {
+  lib.userMaleAgeAverage = function () {
+    var indexA;
+    var number= DATA.filter(function (user) {
         return user.gender === 'male';
       })
-    .reduce(function(anterior,actual){
+    .reduce(function(anterior,actual,index){
+        indexA=index;
         return anterior + actual.age;
-    })/DATA.lenght;
+    },0);
+    return parseFloat(number)/(indexA+1);
   };
 
   // Retornar el promedio de edad de los usuarios mujeres (number)
-  lib.userFemaleAgeAverage = function (age) {
-    var array = DATA.filter(function (user) {
+  lib.userFemaleAgeAverage = function () {
+   var indexA;
+    var number= DATA.filter(function (user) {
         return user.gender === 'female';
-      });
-    var len = array.lenght;
-    return array.reduce(function(anterior,actual){
+      })
+    .reduce(function(anterior,actual,index){
+        indexA=index;
         return anterior + actual.age;
-    })/len;
+    },0);
+    return parseFloat(number)/(indexA+1);
   };
 
   // Retornar un objeto  de etiquetas (tags)
   // cada property del objeto es el nombre de una etiqueta
   // y el value es la cantidad de usuarios que tienene esa etiqueta
-  lib.tagCloud = function (age) {
+  lib.tagCloud = function () {
 
   };
 
   return lib;
 
 })(DATA);
-console.log(MAIN);
+
+
+console.log(MAIN.femaleUsers());
+console.log(MAIN.maleUsersEmails());
+console.log(MAIN.userOlderThan(40));
+console.log(MAIN.olderUser());
+console.info(MAIN.userAgeAverage());
+console.log(MAIN.userMaleAgeAverage());
+console.log(MAIN.userFemaleAgeAverage());
+
