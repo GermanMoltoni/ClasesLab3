@@ -25,7 +25,7 @@ function unirheroes( ...personas:string[] ):string{
 
 
 // Tipo funcion
-function noHaceNada(numero:number,texto:string,booleano:boolean,arreglo:any[]){
+function noHaceNada(numero:number,texto:string,booleano:boolean,arreglo:any[]):void{
 
 }
 
