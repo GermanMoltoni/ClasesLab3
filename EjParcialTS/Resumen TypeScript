@@ -52,3 +52,62 @@ Tipos:
 
     - Revisar tipo:
         let variable:any = 123; typeof(variable);
+
+
+
+
+    - Interface: Se puede asignar a una clase o a una variable
+        interface Ejemplo{
+            attr:string,
+            attr2:number,
+            metodo(param:string):number
+        }
+        - Opcionales Se agrega ?:
+
+        -A funciones:
+            interface dosNum{ (x:number,y:number):number;}
+            let sumar:dosNum = function(x:number,y:number):number{return x+y;}
+
+
+- Clases(Puede ser abstracta, puede tener constructor privado) con interfaz
+    interface Metodos{
+        iniciar(patente:string,idCochera:number):boolean
+    }
+    class Log{
+            public entrada:string;
+        public salida:string;
+        constructor(entrada:string,salida:string){
+            this.entrada=entrada;
+            this.salida=salida;
+        }
+    }
+namespace Operaciones{
+    class Operacion extends Log implemets Metodos{
+       public idUsuario:number;
+       private idCochera:number;
+        private patente:string;
+       static public estatico='prueba';
+       public tiempo:string;
+      public  pago:number
+        constructor(idUsuario:string,patente:string,entrada:string,salida:string,tiempo:string,pago:number){
+            super(entrada,salida);
+            this.idUsuario=idUsuario;
+            this.patente:patente;
+           
+            this.tiempo:tiempo;
+            this.pago:pago;
+        };
+        iniciar(patente:string,idCochera:number):boolean{
+            return true;
+        }
+        get getCochera(){
+            return this.idCochera;
+        }
+        set Usuario(id:number){
+            this.idUsuario=id;
+        }
+        static MostrarOperacion(){
+            return new Operacion();
+        }
+    }
+}
