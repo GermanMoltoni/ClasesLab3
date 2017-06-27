@@ -86,7 +86,10 @@ var MAIN = (function (DATA) {
   // cada property del objeto es el nombre de una etiqueta
   // y el value es la cantidad de usuarios que tienene esa etiqueta
   lib.tagCloud = function () {
-
+    var objTag=[];
+    return DATA.map(function(user){
+      return user.tags;
+    });
   };
 
   return lib;
@@ -102,3 +105,4 @@ console.info(MAIN.userAgeAverage());
 console.log(MAIN.userMaleAgeAverage());
 console.log(MAIN.userFemaleAgeAverage());
 
+console.log(MAIN.tagCloud());
